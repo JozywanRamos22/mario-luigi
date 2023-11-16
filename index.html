@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Super Mario</title>
   </head>
   <body>
@@ -21,8 +27,29 @@
         Apresentamos a vocês os encanadores mais famosos do Reino dos Cogumelos
         - Mário e Luigi!"
       </p>
-      <button>Fale Conosco</button>
+      <button onclick="cliqueiNoBotao()">Fale Conosco</button>
     </div>
     <img src="mario.png" alt="logo mario" class="imagem-mario-luigi" />
+
+    <form class="fale-conosco">
+      <h1>Fale Conosco</h1>
+      <input placeholder="Seu Nome" type="text" />
+      <input placeholder="Seu Telefone" type="tel" />
+      <textarea placeholder="Digite Seu Problema Aqui"></textarea>
+      <button onclick="sumirFormulario()">Enviar Formulário</button>
+    </form>
+    <div class="mascara-form"></div>
   </body>
+  <script>
+    let formulario = document.querySelector(".fale-conosco");
+    let mascara = document.querySelector(".mascara-form");
+    function cliqueiNoBotao() {
+      formulario.style.left = "600px";
+      mascara.style.visibility = "visible";
+    }
+    function sumirFormulario() {
+      formulario.style.left = "-320px";
+      mascara.style.visibility = "hidden";
+    }
+  </script>
 </html>
